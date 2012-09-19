@@ -20,7 +20,7 @@ First of all, add this to your composer.json.
 
 ## Symfony2
 
-```yaml
+```xml
 <service id="plemi.twig.base64_extension" class="Plemi\Twig\Extensions\Base64Extension" public="false">
     <tag name="twig.extension" />
 </service>
