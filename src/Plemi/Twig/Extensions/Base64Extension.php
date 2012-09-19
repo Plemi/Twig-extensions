@@ -12,6 +12,19 @@ use Symfony\Component\HttpFoundation\File\File;
  */
 class Base64Extension extends \Twig_Extension
 {
+    private $webDir;
+
+    /**
+     * Constructor
+     * Inject path to web directory
+     *
+     * @param string $webDir
+     */
+    public function __construct($webDir)
+    {
+        $this->webDir = $webDir;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -30,13 +43,14 @@ class Base64Extension extends \Twig_Extension
      */
     public function image64($path)
     {
-        $file = new File($path, false);
+        $fullPath = $this->webDir.$path;
+        $file = new File($fullPath, true);
 
         if (!$file->isFile() || 0 !== strpos($file->getMimeType(), 'image/')) {
             return;
         }
 
-        $binary = file_get_contents($path);
+        $binary = file_get_contents($fullPath);
 
         return sprintf('data:image/%s;base64,%s', $file->guessExtension(), base64_encode($binary));
     }
