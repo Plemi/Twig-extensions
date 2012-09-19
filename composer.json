@@ -1,0 +1,27 @@
+{
+    "name": "plemi/twig-extensions",
+    "keywords": ["base64"],
+    "homepage": "https://github.com/Plemi/Twig-extensions",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Guyon",
+            "email": "dguyon@gmail.com"
+        },
+        {
+            "name": "Xavier Hermans",
+            "email": "xavhermans@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "1.*",
+        "symfony/http-foundation": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Plemi": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
