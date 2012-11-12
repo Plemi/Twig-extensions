@@ -1,6 +1,6 @@
 {
     "name": "plemi/twig-extensions",
-    "keywords": ["base64"],
+    "keywords": ["base64", "strpad"],
     "homepage": "https://github.com/Plemi/Twig-extensions",
     "type": "library",
     "license": "MIT",
